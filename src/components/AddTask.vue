@@ -14,22 +14,17 @@
       />
     </div>
     <div class="checkbox">
-      <label>Set Reminder</label>
-      <input type="checkbox" name="reminder" v-model="reminder" />
+      <label class="flex2">Set Reminder</label>
+      <input class="flex1" type="checkbox" name="reminder" v-model="reminder" />
     </div>
-    <!-- <Button text="Submit" color="black" /> -->
     <button type="submit" value="Save Task" class="btn">Save Task</button>
   </form>
 </template>
 
 <script>
-// import Button from "./Button.vue";
-
 export default {
   name: "AddTask",
-  components: {
-    // Button,
-  },
+  components: {},
   data() {
     return {
       text: "",
@@ -73,9 +68,31 @@ div {
 input {
   box-sizing: border-box;
   width: 100%;
+  background: none;
+  border: 0.5px solid black;
+  border-radius: 2px;
+  height: 25px;
+  padding-left: 6px;
+}
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  padding-left: 6px;
 }
 .checkbox {
   display: flex;
+  flex-direction: row;
+}
+label {
+  font-size: 15px;
+  font-weight: bolder;
+}
+.flex2 {
+  flex-basis: 95%;
+}
+.flex1 {
+  flex-basis: 5%;
 }
 .btn {
   display: inline-block;

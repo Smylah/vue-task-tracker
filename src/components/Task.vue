@@ -3,7 +3,7 @@
     @dblclick="$emit('toggle-reminder', task.id)"
     :class="[task.reminder ? 'reminder' : '', 'flex']"
   >
-    <div class="task">
+    <div>
       <h3>{{ task.text }}</h3>
       <p>{{ task.day }}</p>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "TaskComp",
+  name: "TaskComponent",
   props: {
     task: Object,
   },
@@ -21,22 +21,14 @@ export default {
 </script>
 
 <style scoped>
-div {
-  display: flex;
-  flex-direction: row;
-  text-align: left;
-  background: rgb(213, 211, 211);
-  padding: 2px 3px;
-  margin: 5px;
-  border-radius: 5px;
-}
 .flex {
   display: flex;
   justify-content: space-between;
-}
-.task {
-  display: flex;
-  flex-direction: column;
+  text-align: left;
+  background: rgb(227, 227, 227);
+  padding: 0 10px;
+  margin: 5px 10px;
+  border-radius: 5px;
 }
 .reminder {
   border-left: 5px solid green;

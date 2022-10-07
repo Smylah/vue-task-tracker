@@ -1,11 +1,14 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <Button
-      @btn-click="$emit('btn-click')"
-      :text="taskText ? 'Close' : 'Add Task'"
-      :color="taskText ? 'red' : 'green'"
-    />
+    <div class="btn-container">
+      <button class="btn" @click="$emit('info-click')">info</button>
+      <Button
+        @btn-click="$emit('btn-click')"
+        :text="taskText ? 'Close' : 'Add Task'"
+        :color="taskText ? 'red' : 'green'"
+      />
+    </div>
   </header>
 </template>
 
@@ -30,5 +33,23 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+.btn-container {
+  display: flex;
+}
+.btn {
+  display: inline-block;
+  background: none;
+  color: black;
+  border: 0.5px solid black;
+  padding: 5px 14px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+}
+button:focus {
+  outline: none;
 }
 </style>
